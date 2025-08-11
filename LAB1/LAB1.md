@@ -142,7 +142,8 @@ Networks with skip connections **consistently outperformed** their counterparts.
 2. **Fine-tuning Protocol:**
    Since the baseline suggested that the features were far from being useful on CIFAR-100, I tried to reshape the weights without catastrophic forgetting. I first trained for a few epochs with all layers
    unfrozen and a small learning rate, then focused only on specific layers, changing optimizers along the way to slow down weight modifications — a sort of reverse progressive unfreezing.
-   I removed the previous classifier and added another head to the net with this layers:  
+   I removed the previous classifier and added another head to the net with this layers:
+   *Linear (in_size=4096, width=1024, depth=2, out_size=512, activation=ReLU), Dropout (p=0.8, activation=ReLU), Linear (in_size=512, width=128, depth=2, out_size=100, activation=None)*
 
    **All layers unfrozen**
    -Epochs: up to 20
@@ -173,6 +174,15 @@ Networks with skip connections **consistently outperformed** their counterparts.
    -Split: 0.2–0.8 (validation/train) of training set
    -Layers unfrozen: 22–31
    -Data augmentation: applied to 40% of the training data, pipeline = augment
+
+   **Augment pipeline:**
+   -RandomAffine(degrees=15, translate=(0.1, 0.1), scale=(0.9, 1.1), shear=10)
+   -RandomHorizontalFlip()
+   -ColorJitter(brightness=0.3, contrast=0.3, saturation=0.2, hue=0.05)
+   -ToTensor()
+   -GaussianBlur(3, sigma=(0.1, 2.0))
+   -RandomErasing(p=0.5, scale=(0.02, 0.2), ratio=(0.3, 3.3))
+   -Normalize((0.5071, 0.4865, 0.4409), (0.2673, 0.2564, 0.2762))
 
 **Results:**  
 Results showed that, contrary to the baseline, there was useful information in the features extracted from the network, achieving decent performance on CIFAR-100 with only a few epochs of fine-tuning.
