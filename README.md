@@ -61,7 +61,7 @@ The **Trainer** class provides a simple training pipeline, inspired by Karpathy-
   - Verify that the model can overfit on a small dataset (prints warnings if not).
 - `use_wandb` and `project_name`: for experiment logging.
 - `augmentation`: tuple with the fraction of the training set to augment and a `torchvision.transforms` object.
-- `fgsm`: enables on-the-fly FGSM adversarial training:
+- `fgsm`: enables on-the-fly FGSM (by batch) adversarial training:
   - A single-element tuple means untargeted attack (`(budget,)`).
   - A two-element tuple means targeted attack (`(budget, target_label)`).
 
@@ -70,7 +70,7 @@ The fine_tune(...) method enables transfer learning by unfreezing only selected 
 
 ---
 
-## FGSM Function
+## FGSM Function (single sample)
 
 The `FGSM` function generates adversarial examples.
 
