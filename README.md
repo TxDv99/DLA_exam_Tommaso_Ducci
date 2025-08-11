@@ -65,6 +65,9 @@ The **Trainer** class provides a simple training pipeline, inspired by Karpathy-
   - A single-element tuple means untargeted attack (`(budget,)`).
   - A two-element tuple means targeted attack (`(budget, target_label)`).
 
+### `fine_tune()` 
+The fine_tune(...) method enables transfer learning by unfreezing only selected layers of the model while reusing the entire train(...) pipeline (data split, dataloaders, early stopping, Weights & Biases logging, augmentation, FGSM, etc.).
+
 ---
 
 ## FGSM Function
