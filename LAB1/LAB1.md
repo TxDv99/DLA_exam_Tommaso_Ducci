@@ -141,16 +141,46 @@ Networks with skip connections **consistently outperformed** their counterparts.
 
 2. **Fine-tuning Protocol:**
    Since the baseline suggested that the features were far from being useful on CIFAR-100, I tried to reshape the weights without catastrophic forgetting. I first trained for a few epochs with all layers
-   unfrozen and a small learning rate, then focused only on specific layers, changing optimizers along the way to slow down weight modifications — a sort of reverse progressive unfreezing. 
+   unfrozen and a small learning rate, then focused only on specific layers, changing optimizers along the way to slow down weight modifications — a sort of reverse progressive unfreezing.
+   I removed the previous classifier and added another head to the net with this layers:  
 
-   - *All layers unfrozen*
-    
-   - Different optimizers applied at different stages  
-   - Goal: maximize transfer performance from CIFAR-10 to CIFAR-100
+   **All layers unfrozen**
+   -Epochs: up to 20
+   -Early stopping: patience = 1 (check validation every 3 epochs)
+   -Batch size: 256
+   -Learning rate: 0.00005
+   -Optimizer: Adam (weight decay = default)
+   -Split: 0.2–0.8 (validation/train) of training set
+   -Layers unfrozen: 0–31
+   -Data augmentation: applied to 40% of the training data, pipeline = augment
+
+   **Deeper convolutional layers and classifier unfrozen**
+   -Epochs: up to 20
+   -Early stopping: patience = 3 (check validation every 2 epochs)
+   -Batch size: 256
+   -Learning rate: 0.0001
+   -Optimizer: SGD (momentum = 0.9, weight decay = 1e-4)
+   -Split: 0.2–0.8 (validation/train) of training set
+   -Layers unfrozen: 11–31
+   -Data augmentation: applied to 40% of the training data, pipeline = augment
+
+   **Classifier layers unfrozen**
+   -Epochs: up to 20
+   -Early stopping: patience = 2 (check validation every 3 epochs)
+   -Batch size: 256
+   -Learning rate: 0.001
+   -Optimizer: SGD (momentum = 0.6, weight decay = 1e-4)
+   -Split: 0.2–0.8 (validation/train) of training set
+   -Layers unfrozen: 22–31
+   -Data augmentation: applied to 40% of the training data, pipeline = augment
 
 **Results:**  
-<!-- Inserire qui grafici e tabelle prima/dopo fine-tuning -->
+Results showed that, contrary to the baseline, there was useful information in the features extracted from the network, achieving decent performance on CIFAR-100 with only a few epochs of fine-tuning.
+![first fine tunng step](../images/LAB1/curves_fisrst_finetuning_step.png "first step")
 
+![second fine tunng step](../images/LAB1/finetuning_step2.png "second step")
+
+![third fine tunng step](../images/LAB1/finetuning_step3.png "third step")
 ---
 
 
