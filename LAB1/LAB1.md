@@ -126,7 +126,7 @@ Networks with skip connections **consistently outperformed** their counterparts.
 ![Test CNNs](../images/LAB1/hist_CNNs.png "Test CNNs")
 - Networks with skip connections prevailed in:
   - Performance
-  - Number of epochs before early stopping  
+  - Less tendency to overfit early  
 - Best model: Deeper ResNet with skip connections → *Test set loss: 0.4854, accuracy: 0.8681*
 ![CM best ResNet](../images/LAB1/cm_best_net.png "CM best CNN")
 
@@ -135,13 +135,16 @@ Networks with skip connections **consistently outperformed** their counterparts.
 ## Task 4 — Fine-Tuning on CIFAR-100
 
 1. **Baseline:**  
-   - Features extracted from the **last convolutional layer** of the best CNN (from previous task)
-   - SVM with **RBF kernel**  
-   - Observed accuracy: *[Inserire valore]*  
-   <!-- Inserire qui eventuale immagine/grafico della baseline -->
+   - Features extracted from the **last first linear layer** of the best CNN (the last convonutional layer had too big tensors and algorithms used in baseline struggled to converge)
+   - KNN with **100 neighbours and euclidean distance**  
+   - Observed accuracy: *0.0101*  
 
-2. **Fine-tuning Protocol:**  
-   - Progressive unfreezing of layers  
+2. **Fine-tuning Protocol:**
+   Since the baseline suggested that the features were far from being useful on CIFAR-100, I tried to reshape the weights without catastrophic forgetting. I first trained for a few epochs with all layers
+   unfrozen and a small learning rate, then focused only on specific layers, changing optimizers along the way to slow down weight modifications — a sort of reverse progressive unfreezing. 
+
+   - *All layers unfrozen*
+    
    - Different optimizers applied at different stages  
    - Goal: maximize transfer performance from CIFAR-10 to CIFAR-100
 
