@@ -177,10 +177,12 @@ Networks with skip connections **consistently outperformed** their counterparts.
 **Results:**  
 Results showed that, contrary to the baseline, there was useful information in the features extracted from the network, achieving decent performance on CIFAR-100 with only a few epochs of fine-tuning.
 ![first fine tunng step](../images/LAB1/curves_fisrst_finetuning_step.png "first step")
-
 ![second fine tunng step](../images/LAB1/finetuning_step2.png "second step")
+![third fine tunng step](../images/LAB1/fine_tuning_step_3.png "third step")
+![CM CIFAR100](../images/LAB1/cmCIFAR100.png "CM CIFAR100")
 
-![third fine tunng step](../images/LAB1/finetuning_step3.png "third step")
+*Test set loss: 1.9734, accuracy: 0.5392*
+
 ---
 
 
