@@ -83,8 +83,8 @@ Repeated the experiment for depths **3, 5, 7, 9**:
 Networks with skip connections **consistently outperformed** their counterparts.
 
 **Results:**  
-![Testo alternativo](images/LAB1/various_depth_trainMLP.png "Losses and accs MLP various depths")
-![Testo alternativo](images/LAB1/various_depth_valMLP.png "Losses and accs MLP various depths")
+![Train MLP](images/LAB1/various_depth_trainMLP.png "Losses and accs MLP various depths")
+![Val MLP](images/LAB1/various_depth_valMLP.png "Losses and accs MLP various depths")
 
 ---
 
