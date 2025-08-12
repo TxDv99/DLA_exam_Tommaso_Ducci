@@ -104,5 +104,6 @@ Then, calibration with T scaling and OOD detection was performed on the newly tr
 ---
 
 ## Conclusions
+The adversarial training produced a model more robust in discriminating between ID and OOD objects, as shown by the more separated distribution of the scores compared to the same model without adversarial training and by the increase in AUPR (from *64* to *83*). There is a slight decrease in AUROC (from *88* to *86*), suggesting that the model is better at distinguishing ID from OOD but with generally lower confidence towards ID objects. Consistently, the improved OOD performance came at the cost of a decrease in accuracy on the ID test set, from *0.8681* to *0.8106*.
 
 
