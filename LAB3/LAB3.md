@@ -71,14 +71,13 @@ A small function was implemented to highlight the names of the recognized entiti
 **Example (from GENETAG sentences):**
 
 **Example with entities highlighted**
+Large <mark>T antigen</mark> was coimmunoprecipitated by antibodies to epitope-tagged <mark>TBP</mark>, endogenous <mark>TBP</mark>, <mark>hTAF ( II ) 100</mark>, <mark>hTAF ( II ) 130</mark>, and <mark>hTAF ( II ) 250</mark>, under conditions where <mark>holo-TFIID</mark> would be precipitated.
 
-Large <span style="color:red; font-weight:bold;">T antigen</span> was coimmunoprecipitated by antibodies to epitope-tagged <span style="color:red; font-weight:bold;">TBP</span> , endogenous <span style="color:red; font-weight:bold;">TBP</span> , <span style="color:red; font-weight:bold;">hTAF ( II ) 100</span> , <span style="color:red; font-weight:bold;">hTAF ( II ) 130</span> , and <span style="color:red; font-weight:bold;">hTAF ( II ) 250</span> , under conditions where <span style="color:red; font-weight:bold;">holo-TFIID</span> would be precipitated .
+We propose a model in which <mark>Sro7</mark> function is involved in the targeting of the <mark>myosin proteins</mark> to their intrinsic pathways.
 
-We propose a model in which <span style="color:red; font-weight:bold;">Sro7</span> function is involved in the targeting of the <span style="color:red; font-weight:bold;">myosin proteins</span> to their intrinsic pathways .
+Glycogen synthesis and catabolism, gluconeogenesis, glycolysis, motility, cell surface properties and adherence are modulated by <mark>csrA</mark> in Escherichia coli, while the production of several secreted virulence factors, the <mark>plant hypersensitive response elicitor HrpN ( Ecc )</mark> and, potentially, other secondary metabolites are regulated by <mark>rsmA</mark> in Erwinia carotovora.
 
-Glycogen synthesis and catabolism , gluconeogenesis , glycolysis , motility , cell surface properties and adherence are modulated by <span style="color:red; font-weight:bold;">csrA</span> in *Escherichia coli* , while the production of several secreted virulence factors , the <span style="color:red; font-weight:bold;">plant hypersensitive response elicitor HrpN ( Ecc )</span> and , potentially , other secondary metabolites are regulated by <span style="color:red; font-weight:bold;">rsmA</span> in *Erwinia carotovora* .
-
-In one acromegalic patient visual improvement was obtained while the abnormal <span style="color:red; font-weight:bold;">GH</span> secretion remained unaltered .
+In one acromegalic patient visual improvement was obtained while the abnormal <mark>GH</mark> secretion remained unaltered.
 
 
 ---
