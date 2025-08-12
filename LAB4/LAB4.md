@@ -11,7 +11,7 @@ For calibration with temperature scaling:
 
 **Results:**
 
-![ECE_Tscaling](../images/LAB4/ece_first_model.png "ECE calibration") ![Calibration](../images/LAB4/calibration_first_model.png "Calibration curves")
+![ECE_Tscaling](../images/LAB4/ece_first_model.png "ECE calibration")![Calibration](../images/LAB4/calibration_first_model.png "Calibration curves")
 
 ![hist before](../images/LAB4/hist_first_model.png "Hist before T scaling") ![hist after](../images/LAB4/hist_first_mode_after_scalingl.png "Hist after T scaling")
 
