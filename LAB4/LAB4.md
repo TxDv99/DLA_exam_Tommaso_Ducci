@@ -8,7 +8,7 @@ For calibration with temperature scaling:
 - **Selection criterion:** lowest **ECE** (Expected Calibration Error), automatically selected.
 - **In-distribution dataset:** CIFAR-10
 - **Out-of-distribution dataset:** CIFAR-100
-The model used is the best ResNet from lab1
+The model used is the [best ResNet from lab1](../bestCNNv2.pth)
 
 **Results:**
 
