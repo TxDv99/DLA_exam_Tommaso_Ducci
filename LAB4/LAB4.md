@@ -64,7 +64,12 @@ For the FGSM task, a function was implemented to perform **untargeted** or **tar
 
 ## Image Quality Degradation
 
-To quantitatively assess image degradation for both attack types, the metric *PSNR* (Peak Signal-to-Noise Ratio) was used:
+To quantitatively assess image degradation for both attack types, the metric *PSNR* (Peak Signal-to-Noise Ratio, batch average) was used:
+
+*Untargeted attacks*
+
+![PSNR untargeted](../images/LAB4/PSNR_untargeted.png "PSNR untargeted")
+![PSNR untargeted](../images/LAB4/PSNR_targeted.png "PSNR targeted")
 
 ---
 
