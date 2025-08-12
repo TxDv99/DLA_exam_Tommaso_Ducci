@@ -42,16 +42,20 @@ For the FGSM task, a function was implemented to perform **untargeted** or **tar
 *Untargeted attacks*
 
 ![original image](../images/LAB4/original_imag.png "Original image")
+
 ![0.01 image](../images/LAB4/0.01_attack_untargeted.png "Image attacked with 0.01 budget")
 ![0.01 heatmap](../images/LAB4/0.01_heatmap_untargeted.png "Heatmap atatck with 0.01 budget")
+
 ![0.07 image](../images/LAB4/0.07_attack_untargeted.png "Image attacked with 0.07 budget")
 ![0.07 image](../images/LAB4/0.07_heatmap_untargeted.png "Heatmap atatck with 0.07 budget")
 
 *Targeted attacks (target class: **bird**)*
 
 ![original image](../images/LAB4/original_image_targeted.png "Original image")
+
 ![0.01 image](../images/LAB4/0.01_targeted.png "Image attacked with 0.01 budget")
 ![0.01 heatmap](../images/LAB4/0.01_heatmpa_targeted.png "Heatmap atatck with 0.01 budget")
+
 ![0.07 image](../images/LAB4/0.05_targeted.png "Image attacked with 0.07 budget")
 ![0.07 image](../images/LAB4/0.05_hetamap_targeted.png "Heatmap atatck with 0.07 budget")
 
