@@ -76,19 +76,33 @@ To quantitatively assess image degradation for both attack types, the metric *PS
 
 ## Adversarial Training
 
-Training with **untargeted adversarial attacks** was performed with a budget of `0.05`.
+Training with **untargeted adversarial attacks** on the same model from 0 on CIFAR10 was performed on the fly:
 
-- Reported results include:
-  - Confusion matrix of the model trained **without** adversarial training
-  - Confusion matrix of the model trained **with** adversarial training
+- Epochs: up to 65
+- Early stopping: patience = 3 (check validation every 3 epochs)
+- Batch size: 64
+- Learning rate: 0.001
+- Optimizer: Adam (weight decay = 1e-4)
+- Split: 0.2–0.8 (validation/train) of training set
+- Data augmentation: applied to 40% of the training data, pipeline =
+  -andomCrop(32, padding=4)
+  -RandomHorizontalFlip()
+  -ToTensor()
+  -Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010))
+- FGSM attack budget: 0.01
 
-<!-- Insert comparison confusion matrices here -->
+Then, calibration with T scaling and OOD detection was performed on the newly trained model:
+
+
+![ECE_Tscaling](../images/LAB4/ece_second_model.png "ECE calibration")![Calibration](../images/LAB4/calibration_second_model.png "Calibration curves")
+
+![hist before](../images/LAB4/hist_second_model.png "Hist before T scaling") ![hist after](../images/LAB4/hist_second_model_after_scaling.png "Hist after T scaling")
+
+![ROC curve ID](../images/LAB4/ROC-ID_second_model.png "ROC curve") ![PR curve](../images/LAB4/PR-second_model.png "PR OOD detection")
+
 
 ---
 
 ## Conclusions
 
-Temperature scaling significantly improved calibration in the OOD task, reducing ECE without degrading accuracy.  
-FGSM attacks demonstrated the vulnerability of the model to both targeted and untargeted perturbations, even at small budgets.  
-Adversarial training with FGSM at ε = 0.05 increased robustness against untargeted attacks, but caused a slight drop in clean accuracy — a known trade-off in robust training.
 
